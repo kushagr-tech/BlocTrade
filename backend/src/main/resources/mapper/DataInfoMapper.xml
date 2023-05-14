@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.DataInfoMapper">
+
+    <insert id="insertDataInfo" parameterType="com.example.demo.model.DataInfo">
+        insert into datainfotable(dataid,dataname,size,description,`key`,value,available) values(#{dataid},#{dataname},#{size},#{description},#{key},#{value},#{available})
+    </insert>
+
+    <select id="getDataInfoById" parameterType="String" resultType="com.example.demo.model.DataInfo">
+        select * from datainfotable where dataid=#{dataid}
+    </select>
+
+    <select id="getDataInfoByLikeName" parameterType="String" resultType="com.example.demo.model.DataInfo">
+        select * from datainfotable where dataname like "%"#{dname}"%"
+    </select>
+    <delete id="deleteDataInfoByDataId" parameterType="String">
+        DELETE FROM datainfotable where dataid = #{dataid}
+    </delete>
+    <!--    public List<DataInfo> getDataInfoByLikeName(String datalname);-->
+</mapper>
