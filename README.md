@@ -48,7 +48,7 @@ $ #
 ### api
 
 ```yaml
-#注册服务，注册的用户信息放在body, 示例如下
+#Register service, the registered user information is placed in the body, the example is as follows
 register:
 http://localhost:8999/admin/register
 body:
@@ -61,20 +61,20 @@ body:
   "regtime":" "
 }
 
-#登录服务
+#Login service
 login:
 	http://localhost:8999/admin/login?username=bt&password=bt
 	username和password是请求的参数
 	
-#退出登录	
+#Log out	
 logout:
 	http://localhost:8999/admin/logout	
 
-#权限测试:权限为user的用户请求该api会接收hello报文
+#Permission test: The user whose permission is user requests the api to receive hello messages
 hello:
 	http://localhost:8999/admin/hello
 	
-#权限测试:权限为admin的用户请求该api会接收hello报文
+#Permission test: Users with permission to admin request that the api will receive hello messages.
 ahello:
 	http://localhost:8999/admin/ahello
 ```
